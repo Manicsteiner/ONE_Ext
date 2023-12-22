@@ -20,3 +20,7 @@ OGG/Vorbis lossy 48kHz/465~160kbps
 我看不懂。  
 emote文件可以解出来一大堆东西，其中\*.psz和相应的\*_tex000应该是一对，psz文件可以用FreeMote解压缩，得到一个巨大的json文件。有些psz文件在文件头前有内容，需要手动删除才能被FreeMote提取。至于tex文件，我看着像没有文件头的DXT1，不过不对。AssetStudio认为是BC7格式的图片，并给出了解读，但也完全不成样子，颜色似乎有点那意思。如果把横向长度裁剪到一半或四分之一，可能可以看出来一点，还需要进一步尝试。  
 [FreeMote wiki PSZ](https://github.com/UlyssesWu/FreeMote/wiki/PSB-Shells,-Types,-Platforms#psz)  
+
+# ONE (Switch) 正式版
+一切照旧，只是图片使用了png，不再使用webp。  
+现在提供一个bat脚本，在你解压出一大堆*.atx.bytes时，把work.bat和imgdec.py和那些文件放在一起，把work.bat里的GARbro目录替换为你的，运行bat即可。最后请手动删除tex*.png等没用了的文件。  

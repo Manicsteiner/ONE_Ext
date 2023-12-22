@@ -23,7 +23,10 @@ for block in blocks:
     #for i, mesh in enumerate(meshes):
     for mesh in meshes:
         # print(f"Mesh {i}: srcOffsetX={mesh['srcOffsetX']}, srcOffsetY={mesh['srcOffsetY']}")
-        texpic = Image.open("tex" + str(mesh['texNo']) + ".webp")
+        texpicname = "tex" + str(mesh['texNo']) + ".png"
+        if not os.path.isfile(texpicname):
+            texpicname = "tex" + str(mesh['texNo']) + ".webp"
+        texpic = Image.open(texpicname)
         meshpiece = texpic.crop((int(mesh['viewX']), int(mesh['viewY']), int(mesh['viewX'] + mesh['width']), int(mesh['viewY'] + mesh['height']))).convert("RGBA")
         outimg.paste(meshpiece, (int(mesh['srcOffsetX']), int(mesh['srcOffsetY'])), mask = meshpiece)
         
